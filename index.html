@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+	
+    <title>Ordem de Serviço!</title>
+	
+	<style>
+	textarea{
+	width:80%;
+	height:280px
+	}
+	button:hover {
+	  box-shadow: 0 0 10px 0px black;
+	}
+	</style>
+
+</head>
+<body>
+    <header>
+        <h1>Ordem de Serviço👨🏼‍🔧</h1>
+    </header>
+    <main>
+        <div id="formulario">
+            <form id="form">
+                <label for="pf">PESSOA FÍSICA  </label>
+                <input type="radio" name="pessoa" id="pf" value="pf">
+                <label for="pj">PESSOA JURÍDICA </label>
+                <input type="radio" name="pessoa" id="pj" value="pj">
+                <label for="reclamacao">PLANO:  </label>
+                <input type="text" id="plano" value="400">
+                <label for="reclamacao">RECLAMAÇÃO:  </label>
+                <input type="text" id="reclamacao">
+                <label for="suporte">SUPORTE PRESTADO:  </label>
+                <input type="text" id="suporte">
+                <label for="referencia">REFERENCIA:  </label>
+                <input type="text" id="referencia">
+                <label for="numero1">TELEFONE 1:  </label>
+                <input type="tel" id="numero1">
+                <label for="numero2">TELEFONE 2:  </label>
+                <input type="tel" id="numero2">
+                <label for="codigo">CÓDIGO DO CLIENTE:</label>
+                <input type="text" id="codigo">
+                <label for="solicitante">NOME DO SOLICITANTE:  </label>
+                <input type="text" id="solicitante">
+                <div id="botoes">
+                    <button class="btn">GERAR DADOS</button>
+                    <button class="btn" type="button" onclick="ordemServico.limpar()">LIMPAR DADOS</button>
+					<button class="btn" type="button" onclick="ordemServico.prazopf()">INFORMAÇÃO PRAZO "PF"</button>
+					<button class="btn" type="button" onclick="ordemServico.prazopj()">INFORMAÇÃO PRAZO "PJ"</button>
+                </div>
+            </form>
+        </div>
+        
+        <textarea id="os">
+
+        </textarea>
+            <img id="copiar" onclick="ordemServico.copiar()"
+            src="img/file.png" alt="Copiar">
+
+    </main>
+    <footer>
+        <p>Criado por &copy;Mariana Faustino 2023</p>
+		<p>Atualizado por &copy;Daniel "Niel" Knaip 2024</p>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
