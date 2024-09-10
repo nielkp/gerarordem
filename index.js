@@ -10,16 +10,23 @@ class OrdemServico{
         e.preventDefault()
         let ordemServico = new OrdemServico().lerDados()
         
+		var dataAtual = new Date();
+		var dia = dataAtual.getDate();
+		var mes = dataAtual.getMonth() + 1;
+		var ano = dataAtual.getFullYear();
+		var dataFormatada = dia + "/" + mes + "/" + ano;
 
         document.getElementById('os')
-        .value = 'PLANO:  '+ ordemServico.plano + 'M'
-        + '\nRECLAMAÇÃO:  '+ ordemServico.reclamacao
-        +'\nSUPORTE PRESTADO:  '+ ordemServico.suporte
-        +'\nOBSERVAÇÕES:  ' + ordemServico.pessoa 
-        +'\n----- \n REFERÊNCIA:  '+ ordemServico.referencia 
-        + '\n TELEFONE DE CONTATO:  '+ ordemServico.numero1 + ' || ' + ordemServico.numero2  
-        +'\n CÓDIGO DO CLIENTE:  '+ ordemServico.codigo 
-        +'\n NOME DO SOLICITANTE: ' + ordemServico.solicitante
+        .value = 'DATA DE ABERTURA:  '+ dataFormatada
+        + '\nLED DA ONU:  '+ ordemServico.ledonu
+        +'\nRECLAMAÇÃO:  '+ ordemServico.reclamacao
+        +'\nSUPORTE PRESTADO:  ' + ordemServico.suporte 
+		+'\nOBSERVAÇÕES:  ' + ordemServico.pessoa 
+        +'\nREFERÊNCIAS:  '+ ordemServico.referencia 
+        + '\nTELEFONES:  '+ ordemServico.telefones
+        +'\nID CLIENTE:  '+ ordemServico.idcliente 
+		+'\nPLANO:  '+ ordemServico.plano + "M"
+        +'\nSOLICITANTE: ' + ordemServico.solicitante
 
     
         
@@ -27,21 +34,21 @@ class OrdemServico{
 
     lerDados(){
         let dados = {}
-
-        dados.plano = document.getElementById('plano').value
+        dados.ledonu = document.getElementById('ledonu').value || ''
+        dados.reclamacao = document.getElementById('reclamacao').value || ''
+        dados.suporte = document.getElementById('suporte').value || ''
         dados.referencia = document.getElementById('referencia').value || ''
-        dados.numero1 = document.getElementById('numero1').value 
-        dados.numero2 = document.getElementById('numero2').value || ''
-        dados.codigo = document.getElementById('codigo').value
-        dados.solicitante = document.getElementById('solicitante').value
-        dados.reclamacao = document.getElementById('reclamacao').value || 'CLIENTE SEM ACESSO'
-        dados.suporte = document.getElementById('suporte').value || 'ONU INATIVA, VERIFICADO QUE O CONECTOR ESTAVA BEM CONECTADO, DESLIGADO E LIGADO A ONU MAS SEM SUCESSO. '
+        dados.telefones = document.getElementById('telefones').value || ''
+		dados.idcliente = document.getElementById('idcliente').value || ''
+        dados.plano = document.getElementById('plano').value || ''
+        dados.solicitante = document.getElementById('solicitante').value || ''
+        
 
         const pessoa = document.querySelector('input[name="pessoa"]:checked')
         if(pessoa?.value === 'pj'){
-            dados.pessoa = 'CLIENTE CIENTE DA PASSIVIDADE DE COBRANÇA E DO PRAZO DE ATÉ 12 HORAS ÚTEIS.'
+            dados.pessoa = 'O suporte técnico é passível de cobrança, quando o problema é ocasionado pelo cliente, por exemplo: equipamento quebrado, mau uso, ou problema na rede interna. Será a cobrança no valor de R$80,00 Reais, cobrado dinheiro ou pix no ato prestação serviço, prazo até 12 horas úteis!!'
         } else{
-            dados.pessoa = 'CLIENTE CIENTE DA PASSIVIDADE DE COBRANÇA E DO PRAZO DE ATÉ 2 DIAS ÚTEIS.'
+            dados.pessoa = 'O suporte técnico é passível de cobrança, quando o problema é ocasionado pelo cliente, por exemplo: equipamento quebrado, mau uso, ou problema na rede interna. Será a cobrança no valor de R$80,00 Reais, cobrado dinheiro ou pix no ato prestação serviço, prazo até 2 dias úteis!!'
         }
         
         return dados
@@ -72,17 +79,15 @@ class OrdemServico{
         for (var i = 0; i < radios.length; i++) {
         radios[i].checked = false;
         }
-
-        document.getElementById('plano').value = ''
+        document.getElementById('ledonu').value = ''
         document.getElementById('reclamacao').value = ''
         document.getElementById('suporte').value = ''
+        document.getElementById('telefones').value = ''
+        document.getElementById('idcliente').value = ''
         document.getElementById('referencia').value = ''
-        document.getElementById('numero1').value = ''
-        document.getElementById('numero2').value = ''
-        document.getElementById('codigo').value = ''
         document.getElementById('solicitante').value = ''
+		document.getElementById('plano').value = ''
     }
 }
 
 var ordemServico = new OrdemServico()
-
