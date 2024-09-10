@@ -22,7 +22,7 @@ class OrdemServico{
         +'\nRECLAMAÇÃO:  '+ ordemServico.reclamacao
         +'\nSUPORTE PRESTADO:  ' + ordemServico.suporte 
 		+'\nOBSERVAÇÕES:  ' + ordemServico.pessoa 
-        +'\nREFERÊNCIAS:  '+ ordemServico.referencia 
+        +'\n\nREFERÊNCIAS:  '+ ordemServico.referencia 
         + '\nTELEFONES:  '+ ordemServico.telefones
         +'\nID CLIENTE:  '+ ordemServico.idcliente 
 		+'\nPLANO:  '+ ordemServico.plano + "M"
