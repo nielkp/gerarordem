@@ -38,7 +38,7 @@ form input{
     border: none;
     background-color: #ffffff77;
     border-radius: 5px;
-    color: #fff;
+
 }
 
 #formulario{
@@ -95,6 +95,14 @@ form input{
     color: #fff;
     border: #fff;
 }
+
+#ledonu {
+	border: none;
+    background-color: #ffffff77;
+    border-radius: 5px;
+
+}
+
 
 footer{
     text-align: center;
