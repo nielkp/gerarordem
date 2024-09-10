@@ -30,26 +30,36 @@
     <main>
         <div id="formulario">
             <form id="form">
-                <label for="pf">PESSOA FÍSICA  </label>
+                <label for="pf">PESSOA FÍSICA:</label>
                 <input type="radio" name="pessoa" id="pf" value="pf">
-                <label for="pj">PESSOA JURÍDICA </label>
+				
+                <label for="pj">PESSOA JURÍDICA:</label>
                 <input type="radio" name="pessoa" id="pj" value="pj">
-                <label for="reclamacao">PLANO:  </label>
-                <input type="text" id="plano" value="400">
+				
+                <label for="ledonu">LED DA ONU:  </label>
+                <input type="text" id="ledonu">
+				
                 <label for="reclamacao">RECLAMAÇÃO:  </label>
                 <input type="text" id="reclamacao">
+				
                 <label for="suporte">SUPORTE PRESTADO:  </label>
                 <input type="text" id="suporte">
-                <label for="referencia">REFERENCIA:  </label>
+				
+				<label for="referencia">REFERÊNCIAS:  </label>
                 <input type="text" id="referencia">
-                <label for="numero1">TELEFONE 1:  </label>
-                <input type="tel" id="numero1">
-                <label for="numero2">TELEFONE 2:  </label>
-                <input type="tel" id="numero2">
-                <label for="codigo">CÓDIGO DO CLIENTE:</label>
-                <input type="text" id="codigo">
-                <label for="solicitante">NOME DO SOLICITANTE:  </label>
+				
+                <label for="telefones">TELEFONES:  </label>
+                <input type="tel" id="telefones">
+				
+                <label for="idcliente">ID CLIENTE:  </label>
+                <input type="text" id="idcliente">
+				
+                <label for="plano">PLANO:</label>
+                <input type="text" id="plano" value="400">
+				
+                <label for="solicitante">SOLICITANTE:  </label>
                 <input type="text" id="solicitante">
+				
                 <div id="botoes">
                     <button class="btn">GERAR DADOS</button>
                     <button class="btn" type="button" onclick="ordemServico.limpar()">LIMPAR DADOS</button>
@@ -71,5 +81,14 @@
 		<p>Atualizado por &copy;Daniel "Niel" Knaip 2024</p>
     </footer>
     <script src="index.js"></script>
+	<script>
+  var dataAtual = new Date();
+  var dia = dataAtual.getDate();
+  var mes = dataAtual.getMonth() + 1;
+  var ano = dataAtual.getFullYear();
+  var dataFormatada = dia + "/" + mes + "/" + ano;
+  var minhaVariavel = dataFormatada;
+  document.getElementById("dataFormatada").value = minhaVariavel;
+</script>
 </body>
 </html>
