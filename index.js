@@ -86,7 +86,7 @@ class OrdemServico{
         document.getElementById('idcliente').value = ''
         document.getElementById('referencia').value = ''
         document.getElementById('solicitante').value = ''
-		document.getElementById('plano').value = ''
+		document.getElementById('plano').value = '400'
     }
 }
 
