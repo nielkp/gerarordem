@@ -36,8 +36,14 @@
                 <label for="pj">PESSOA JURÍDICA:</label>
                 <input type="radio" name="pessoa" id="pj" value="pj">
 				
-                <label for="ledonu">LED DA ONU:  </label>
-                <input type="text" id="ledonu">
+                <label for="ledonu">LED DA ONU:</label>
+				<select id="ledonu">
+				  <option value="">Selecione</option>
+				  <option value="LED PON PISCANDO (SINAL/HABILITAR)">LED PON PISCANDO (SINAL/HABILITAR)</option>
+				  <option value="LED LOS VERMELHO (PROBLEMA FÍSICO)">LED LOS VERMELHO (PROBLEMA FÍSICO)</option>
+				  <option value="LEDS APAGADOS (FONTE/BOTÃO/TOMADA)">LEDS APAGADOS (FONTE/BOTÃO/TOMADA)</option>
+				  <option value="LED POWER LIGADO (APARELHO QUEIMADO)">LED POWER LIGADO (APARELHO QUEIMADO)</option>
+				</select>
 				
                 <label for="reclamacao">RECLAMAÇÃO:  </label>
                 <input type="text" id="reclamacao">
